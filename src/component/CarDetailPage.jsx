@@ -242,14 +242,14 @@ const CarDetailPage = () => {
             </button>
           </form>
           <div className="checkboxes">
-            <label>
+            <label style={{color:'gray'}}>
               <input
                 type="checkbox"
                 checked={driverAgeConfirm}
                 onChange={e => setDriverAgeConfirm(e.target.checked)}
               /> Drivers age between 25 - 75.
             </label>
-            <label>
+            <label style={{color:'gray'}}>
               <input
                 type="checkbox"
                 checked={returnSameLoc}

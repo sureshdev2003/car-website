@@ -1,5 +1,5 @@
 import React from "react";
-import"./Fleet.css"
+import "./Fleet.css";
 import { useNavigate } from "react-router-dom";
 
 const cars = [
@@ -60,9 +60,9 @@ const cars = [
   },
   {
     name: "Lancer Cedia",
-    image: "	https://images.pexels.com/photos/1682666/pexels-photo-1682666.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: "https://images.pexels.com/photos/1682666/pexels-photo-1682666.jpeg?auto=compress&cs=tinysrgb&w=600",
     type: "Luxury",
-    price: "9,501", 
+    price: "9,501",
     currency: "INR",
     seats: 4,
     doors: 2,
@@ -73,45 +73,49 @@ const cars = [
 
 const FleetPage = () => {
   const navigate = useNavigate();
-  return (
-<div className="fleet-container">
-  <div className="fleet-inner">
-    <div className="fleet-header">
-      <div className="fleet-subtitle">CHOOSE YOUR CAR</div>
-      <h1 className="fleet-title">Our Vehicle Fleet</h1>
-    </div>
-    <div className="fleet-grid">
-      {cars.map((car, idx) => (
-        <div key={idx} className="fleet-card">
-          <img
-            src={car.image}
-            alt={car.name}
-            onClick={() => navigate(`/fleet/${idx}`)}
-          />
-          <div className="fleet-card-header">
-            <div className="fleet-car-name">{car.name}</div>
-            <span className="fleet-car-type">{car.type}</span>
-          </div>
-          <div className="fleet-details">
-            <span>👤 {car.seats}</span>
-            <span>🚪 {car.doors}</span>
-            <span>🚪 {car.transmission}</span>
-            <span>⛽ {car.fuel}</span>
-          </div>
-          <div className="fleet-price">
-            ₹{car.price} {car.currency}{" "}
-            <span>/Per Month</span>
-          </div>
-          <button className="fleet-button">
-            <span>→</span>
-          </button>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
 
+  return (
+    <div className="fleet-container">
+      {/* Back Button */}
+      <button className="back-btn" onClick={() => navigate(-1)}>
+        ← Back
+      </button>
+
+      <div className="fleet-inner">
+        <div className="fleet-header">
+          <div className="fleet-subtitle">CHOOSE YOUR CAR</div>
+          <h1 className="fleet-title">Our Vehicle Fleet</h1>
+        </div>
+        <div className="fleet-grid">
+          {cars.map((car, idx) => (
+            <div key={idx} className="fleet-card">
+              <img
+                src={car.image}
+                alt={car.name}
+                onClick={() => navigate(`/fleet/${idx}`)}
+              />
+              <div className="fleet-card-header">
+                <div className="fleet-car-name">{car.name}</div>
+                <span className="fleet-car-type">{car.type}</span>
+              </div>
+              <div className="fleet-details">
+                <span>👤 {car.seats}</span>
+                <span>🚪 {car.doors}</span>
+                <span>🚗 {car.transmission}</span>
+                <span>⛽ {car.fuel}</span>
+              </div>
+              <div className="fleet-price">
+                ₹{car.price} {car.currency} <span>/Per Month</span>
+              </div>
+              <button className="fleet-button">
+                <span>→</span>
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default FleetPage; 
+export default FleetPage;

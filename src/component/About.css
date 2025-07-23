@@ -111,3 +111,18 @@
     text-align: center;
   }
 }
+
+.back-btn {
+  margin: 10px 0;
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.back-btn:hover {
+  background-color: #555;
+}

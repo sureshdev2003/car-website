@@ -1,21 +1,27 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // 👈 import navigate
 import "./About.css";
-import aboutImage from "../assets/c3.jpg"; // Replace with your image path
+import aboutImage from "../assets/c3.jpg";
 
 function About() {
+  const navigate = useNavigate(); // 👈 hook to navigate
+
   return (
     <div className="about-container">
+      {/* Back Button */}
+      <button className="back-btn" onClick={() => navigate(-1)}>
+        ← Back
+      </button>
+
       <h2 className="about-title">
         The story behind our commitment to quality and service
       </h2>
 
       <div className="about-content">
-        {/* Left: Image */}
         <div className="about-image">
           <img src={aboutImage} alt="Team" />
         </div>
 
-        {/* Right: Card Content */}
         <div className="about-info">
           <h3>Established in 2016</h3>
           <p>
@@ -31,8 +37,10 @@ function About() {
             </div>
             <div>
               <h4>Headquarters</h4>
-              <p>4517 Washington Ave,
-            Manchester, Kentucky 39495</p>
+              <p>
+                4517 Washington Ave,<br />
+                Manchester, Kentucky 39495
+              </p>
             </div>
             <div>
               <h4>Fleet Size</h4>
