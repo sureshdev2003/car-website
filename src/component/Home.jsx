@@ -8,13 +8,13 @@ function Home() {
   const navigate = useNavigate();
 
   // 🔐 Redirect if not logged in
-  // useEffect(() => {
-  //   const isLoggedIn = localStorage.getItem("isLoggedIn");
-  //   if (!isLoggedIn || isLoggedIn !== "true") {
-  //     alert("Please login to access this page.");
-  //     navigate("/auth"); // Replace with your actual login route if different
-  //   }
-  // }, [navigate]);
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (!isLoggedIn || isLoggedIn !== "true") {
+      alert("Please login to access this page.");
+      navigate("/auth"); // Replace with your actual login route if different
+    }
+  }, [navigate]);
 
   // Booking form state
   const [name,setName]= useState("");
